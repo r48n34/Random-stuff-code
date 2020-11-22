@@ -40,7 +40,15 @@ public class hello {
                 }
 
                 //System.out.println(++i + " " + "https://" + urlStr);
-                out.println("https://" + urlStr);
+                String arr[] = urlStr.split("");
+
+                if(arr[0].equals("h")){
+                  out.println(urlStr);//already have a http://
+                }
+                else{
+                  out.println("https://" + urlStr);//don't have a https://
+                }
+                
 
             }
 
