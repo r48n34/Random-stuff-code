@@ -15,13 +15,23 @@ public class hello {
 
   public static void main(String[] args) throws FileNotFoundException { 
 
-    File outFile = new File("songWebText.txt"); // your txt output
-    PrintWriter out = new PrintWriter(outFile);
-    //int i = 1;
+    
+    
 
     // txt input, rename to your txt name
     try (Scanner sc = new Scanner(new File("web.txt"))) 
     {
+      int count = 0;
+      File outFile = new File("songWebText.txt"); // your txt output
+
+      if (!outFile.createNewFile()) {
+        System.out.println("File exists.");
+        return;
+
+      }
+
+      PrintWriter out = new PrintWriter(outFile);
+
         while (sc.hasNextLine())
         {
             String line = sc.nextLine();
@@ -34,6 +44,7 @@ public class hello {
 
             if(m.find()){
                 String urlStr = m.group();
+                count++;
 
                 if (urlStr.startsWith("(") && urlStr.endsWith(")")){          
                   urlStr = urlStr.substring(1, urlStr.length() - 1);
@@ -54,13 +65,15 @@ public class hello {
 
             
         }
+
+        System.out.println("Done, total link = " + count + ".");
+        out.close();
     }
     catch(IOException e){
       System.out.println("not found");
+      
     }
     
-    out.close();
-
 
   }
 }
