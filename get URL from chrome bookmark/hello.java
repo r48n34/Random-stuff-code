@@ -13,22 +13,30 @@ import java.util.regex.Pattern;
 
 public class hello {
 
-  public static void main(String[] args) throws FileNotFoundException { 
+  public static String getName(){
 
-    
-    
+    Scanner console = new Scanner(System.in);
+    System.out.println("Enter the output txt name: ");
+    String name = console.next() + ".txt" ;
+    console.close();    
 
-    // txt input, rename to your txt name
+    return name;
+  }
+
+  public static void main(String[] args) throws FileNotFoundException {   
+
     try (Scanner sc = new Scanner(new File("web.txt"))) 
     {
-      int count = 0;
-      File outFile = new File("songWebText.txt"); // your txt output
+      
+      File outFile = new File(getName()); // your txt output
+      
 
       if (!outFile.createNewFile()) {
-        System.out.println("File exists.");
+        System.out.println("File exists.Re-run and try other name.");       
         return;
-
       }
+
+      int count = 0;      
 
       PrintWriter out = new PrintWriter(outFile);
 
@@ -67,6 +75,7 @@ public class hello {
             
 
             if(m.find()){
+              
                 String urlStr = m.group();
                 count++;
 
@@ -81,7 +90,9 @@ public class hello {
                   out.println(line.substring(start,end));
                 }
 
-                if(c == 'h'){ //already have a https:// or http:// , no need to add
+                //already have a https:// or http:// , no need to add
+                //Return link should be www.xxx.com or http://www....
+                if(c == 'h'){ 
                   out.println(urlStr);
                 }
                 else{
@@ -96,9 +107,10 @@ public class hello {
 
         System.out.println("Done, total link = " + count + ".");
         out.close();
+        
     }
     catch(IOException e){
-      System.out.println("not found");
+      System.out.println("error, try again.");
       
     }
     
