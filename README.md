@@ -1,7 +1,5 @@
 # Random-stuff-code
-Some records in various languages
-
-Nothing special
+Some records in various languages, Nothing special.
 
 1.morse code
 - Create a morse code tree
