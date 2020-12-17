@@ -8,4 +8,4 @@ Some records in various languages, Nothing special.
 - Get URL from chrome export bookmark then random play in web
 
 3. Dec,bin, hex calculator
-- simple 3 types data adder
+- Simple 3 types data adder
