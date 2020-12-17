@@ -7,5 +7,5 @@ Some records in various languages, Nothing special.
 2. Get URL from chrome bookmark
 - Get URL from chrome export bookmark then random play in web
 
-3. Dec,bin, hex calculator
+3. Dec, bin, hex calculator
 - Simple 3 types data adder
