@@ -4,4 +4,5 @@ Approache:
 3. Using either one to generate the files
 3(a). Using "java file/hello.java" to export the web link file
 3(b). Using "js version/upweb.html" to export the web link file
+      Demo: https://r48n34.github.io/jsbk/upweb.html
 4. Using "js reader" to create a random play web with the generated file in step 3
