@@ -64,9 +64,9 @@ function toArray(){ // buffer function for next step
 function fineWeb(arr){ // get url and name from a array
     let reg = new RegExp("\\(?\\b(http://|www[.]|https://)[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]");
 
-    for(let i = 0; i< arr.length; i++){
-        let target = arr[i]; //current line
 
+    arr.forEach(function(target){
+        
         if(reg.test(target)){          
             
             let k = findname(target); // name 
@@ -80,12 +80,11 @@ function fineWeb(arr){ // get url and name from a array
             //console.log(j); 
             //result.push(j);
             wordFinal += j + "\n";
-            
         }
 
-    }
+    });
 
-    //console.log(wordFinal);
+
     load.innerHTML = "";
     btn.style.display = "block"; //show button
 
