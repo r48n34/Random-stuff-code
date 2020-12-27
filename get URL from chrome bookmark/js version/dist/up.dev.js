@@ -60,10 +60,7 @@ function toArray() {
 function fineWeb(arr) {
   // get url and name from a array
   var reg = new RegExp("\\(?\\b(http://|www[.]|https://)[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]");
-
-  for (var i = 0; i < arr.length; i++) {
-    var target = arr[i]; //current line
-
+  arr.forEach(function (target) {
     if (reg.test(target)) {
       var k = findname(target); // name 
       //console.log(k); 
@@ -77,9 +74,7 @@ function fineWeb(arr) {
 
       wordFinal += j + "\n";
     }
-  } //console.log(wordFinal);
-
-
+  });
   load.innerHTML = "";
   btn.style.display = "block"; //show button
 }
