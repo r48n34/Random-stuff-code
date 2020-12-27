@@ -57,16 +57,6 @@ public class hello {
             
             }
 
-          /* // search from front to back
-            for(int i = 0; i< line.length();i++){ // a word start must be "> after it
-              if(line.charAt(i) == '"' && line.charAt(i+1) == '>'){
-                start = i+2;
-                break;
-              }
-
-            }
-          */
-
             //Credit to BullyWiiPlaza in sof
             String regex = "\\(?\\b(http://|www[.])[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]";
             Pattern p = Pattern.compile(regex);
