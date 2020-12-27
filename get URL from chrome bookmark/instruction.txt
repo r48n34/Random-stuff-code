@@ -1,5 +1,7 @@
 Approache:
 1. Get bookmark in Google chrome with "export bookmark"	
 2. Remane your bookmark file with "web.txt"
-3. Using "java file/hello.java" to export the web link file
+3. Using either one to generate the files
+3(a). Using "java file/hello.java" to export the web link file
+3(b). Using "js version/upweb.html" to export the web link file
 4. Using "js reader" to create a random play web with the generated file in step 3
