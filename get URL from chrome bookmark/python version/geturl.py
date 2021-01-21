@@ -9,12 +9,8 @@ text = open("op.txt", "w", encoding="utf-8")
 soup = BeautifulSoup(htmlhandle, 'html.parser')
 
 for link in soup.find_all('a'):
-
-    if int(len(link.contents)) != 0:
-        text.writelines(str(link.contents[0]) + "\n")
-    else:
-        text.writelines("" + "\n")
-
+    k = str(link.contents[0]) if len(link.contents) != 0 else "" 
+    text.writelines(k + "\n")
     text.writelines(str(link.get('href')) + "\n")
-
+    
 text.close()
