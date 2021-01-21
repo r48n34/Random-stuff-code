@@ -1,5 +1,5 @@
 #Get all names and url from bookmark, write to txt file
-import requests as rq
+#import requests as rq
 from bs4 import BeautifulSoup
 
 file ='./bjk.html' #Bookmark location
@@ -12,5 +12,5 @@ for link in soup.find_all('a'):
     k = str(link.contents[0]) if len(link.contents) != 0 else "" 
     text.writelines(k + "\n")
     text.writelines(str(link.get('href')) + "\n")
-    
+
 text.close()
