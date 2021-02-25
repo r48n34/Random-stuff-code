@@ -91,7 +91,7 @@ function add(id, item){
 
 }
 
-function download(filename, type,data) { //download txt file function
+function download(filename, type, data) { //download txt file function
     return new Promise((resolve, reject) =>{
         var element = document.createElement('a');
 
